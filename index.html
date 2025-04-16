@@ -17,14 +17,16 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     .logo img {
       height: 40px;
+	  align: left;
     }
     .container {
-      padding-right: 15%;
-	  padding-left: 15%;
-	  padding-top:20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     .job-title {
       font-size: 24px;
@@ -38,13 +40,17 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     .info-left p {
       margin: 5px 0;
     }
+    .job-logo {
+      margin-top: 15px;
+    }
     .job-logo img {
       height: 100px;
-      margin-left: 20px;
+      max-width: 100%;
     }
     .apply-button {
       display: inline-block;
@@ -58,10 +64,12 @@
     }
     .tab-menu {
       display: flex;
+      flex-wrap: wrap;
       background-color: #f5f5f5;
       border-bottom: 2px solid #ccc;
     }
     .tab-menu button {
+      flex: 1 1 auto;
       background: none;
       border: none;
       padding: 15px 20px;
@@ -82,13 +90,41 @@
     .tab-content.active {
       display: block;
     }
+
+    @media (max-width: 768px) {
+      .info-with-logo {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .job-logo {
+        align-self: center;
+      }
+      .apply-button {
+        width: 100%;
+        text-align: center;
+      }
+      .tab-menu {
+        flex-direction: column;
+      }
+      .tab-menu button {
+        text-align: left;
+        width: 100%;
+        padding: 12px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .job-title {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">
-      <img src="Accenture-logo.png" alt="Accenture Logo">
+      <img src="Accenture-logo.png" alt="Accenture Logo" align="left">
     </div>
   </header>
 
@@ -102,7 +138,7 @@
         <p><strong>Job Type:</strong> Full Time (8 hrs/day Work from Home)</p>
         <p><strong>Location:</strong> Chennai / Coimbatore (Monthly once needs to report in the office)</p>
         <a href="https://forms.gle/tAdU3dUHZCmDbj4u7" class="apply-button">APPLY NOW</a>
-		<span style="margin-left: 15px; font-style: italic; color: #555;">Last date to apply: <em>April 21, 2025</em></span>
+        <span style="margin-left: 15px; font-style: italic; color: #555; display: inline-block; margin-top: 10px;">Last date to apply: <em>April 21, 2025</em></span>
       </div>
       <div class="job-logo">
         <img src="v logo.png" alt="Job Logo">
@@ -116,56 +152,40 @@
     </div>
 
     <div id="description" class="tab-content active">
-  <p>📄 <strong>MS Word & Excel skills</strong><br>
-  Basic to intermediate proficiency in MS Office tools is all you need.</p>
-
-  <p>🧠 <strong>Simple documentation tasks</strong><br>
-  You'll assist in creating, formatting, and maintaining documents and reports.</p>
-
-  <p>📊 <strong>Excel-based data handling</strong><br>
-  Work on spreadsheets, update records, and perform basic data analysis.</p>
-
-  <p>🤝 <strong>Team support activities</strong><br>
-  Collaborate with teams to ensure smooth execution of day-to-day tasks.</p>
-
-  <p>📂 <strong>File management and tracking</strong><br>
-  Maintain digital files, organize folders, and ensure document accuracy.</p>
-
-  <p>🗣️ <strong>Clear communication</strong><br>
-  Basic written and verbal communication skills are important for this role.</p>
-
-  <p>🏫 <strong>On-the-job training</strong><br>
-  All necessary tools and processes will be taught after onboarding for one month period for that month only ₹20,000 p.m after training ₹25,000 p.m .</p>
-  
-  <p>✅ <strong>Working condition</strong><br>
-  A office laptop will be provided with credentials.If recruited alternative saturday will be working day in a month.</p>
-</div>
+      <p>📄 <strong>MS Word & Excel skills</strong><br>Basic to intermediate proficiency in MS Office tools is all you need.</p>
+      <p>🧠 <strong>Simple documentation tasks</strong><br>You'll assist in creating, formatting, and maintaining documents and reports.</p>
+      <p>📊 <strong>Excel-based data handling</strong><br>Work on spreadsheets, update records, and perform basic data analysis.</p>
+      <p>🤝 <strong>Team support activities</strong><br>Collaborate with teams to ensure smooth execution of day-to-day tasks.</p>
+      <p>📂 <strong>File management and tracking</strong><br>Maintain digital files, organize folders, and ensure document accuracy.</p>
+      <p>🗣️ <strong>Clear communication</strong><br>Basic written and verbal communication skills are important for this role.</p>
+      <p>🏫 <strong>On-the-job training</strong><br>All necessary tools and processes will be taught after onboarding for one month period. For that month only ₹20,000 p.m. After training ₹25,000 p.m.</p>
+      <p>✅ <strong>Working condition</strong><br>A office laptop will be provided with credentials. If recruited, alternative Saturday will be a working day in a month.</p>
+    </div>
 
     <div id="eligibility" class="tab-content">
-  <ul>
-    <li>🎓 Candidates must have completed at least an undergraduate (UG) degree in any discipline Also applicant with PG degress elgible for applying.</li>
-    <li>📈 A minimum of 55% aggregate marks is required across all semesters.</li>
-    <li>✅ There should be no standing arrears at the time of application.</li>
-    <li>⏳ Candidates awaiting final semester results are not eligible to apply.</li>
-    <li>🤝 Applicants from minority communities will be given preference during the recruitment process, in alignment with our diversity and inclusion goals.</li>
-  </ul>
-  <a href="https://forms.gle/tAdU3dUHZCmDbj4u7" class="apply-button">APPLY NOW</a>
-</div>
+      <ul>
+        <li>🎓 Candidates must have completed at least an undergraduate (UG) degree in any discipline. Also, applicants with PG degrees are eligible to apply.</li><br>
+        <li>📈 A minimum of 55% aggregate marks is required across all semesters.</li><br>
+        <li>✅ There should be no standing arrears at the time of application.</li><br>
+        <li>⏳ Candidates awaiting final semester results are not eligible to apply.</li><br>
+        <li>🤝 Applicants from minority communities will be given preference during the recruitment process, in alignment with our diversity and inclusion goals.</li><br>
+      </ul>
+      <a href="https://forms.gle/tAdU3dUHZCmDbj4u7" class="apply-button">APPLY NOW</a>
+    </div>
 
-<div id="process" class="tab-content">
-  <ul>
-    <li>🧮 The first step is an **online eligibility test** consisting of 30 questions.</li>
-    <li>🧠 The test will include **Quantitative Aptitude** and **Logical Reasoning** questions.</li>
-    <li>🌐 The test is conducted **online** and can be taken from home within the given time window.</li>
-    <li>🗣️ If shortlisted, a **Walk-in Interview** will be held at the reporting office.</li>
-    <li>🧩 During the interview, your **communication skills and problem-solving abilities** will be evaluated.</li>
-    <li>📜 Post-interview, the **HR team will verify your academic certificates and documents**.</li>
-    <li>✅ Final selection will be based on overall performance and eligibility verification.</li>
-  </ul>
-  <a href="https://forms.gle/tAdU3dUHZCmDbj4u7" class="apply-button">APPLY NOW</a>
-</div>
-
-</div>
+    <div id="process" class="tab-content">
+      <ul>
+        <li>🧮 The first step is an <strong>online eligibility test</strong> consisting of 30 questions.</li><br>
+        <li>🧠 The test will include <strong>Quantitative Aptitude</strong> and <strong>Logical Reasoning</strong> questions.</li><br>
+        <li>🌐 The test is conducted <strong>online</strong> and can be taken from home within the given time window.</li><br>
+        <li>🗣️ If shortlisted, a <strong>Interview call letter sent to your mail id</strong>Direct interview will be held at the reporting office.</li><br>
+        <li>🧩 During the interview, your <strong>communication skills and problem-solving abilities</strong> will be evaluated.</li><br>
+        <li>📜 Post-interview, the <strong>HR team will verify your academic certificates and documents</strong>.</li><br>
+        <li>✅ Final selection will be based on overall performance and eligibility verification.</li><br>
+      </ul>
+      <a href="https://forms.gle/tAdU3dUHZCmDbj4u7" class="apply-button">APPLY NOW</a>
+    </div>
+  </div>
 
   <script>
     const buttons = document.querySelectorAll(".tab-button");
@@ -175,7 +195,6 @@
       btn.addEventListener("click", () => {
         buttons.forEach(b => b.classList.remove("active"));
         contents.forEach(c => c.classList.remove("active"));
-
         btn.classList.add("active");
         document.getElementById(btn.getAttribute("data-tab")).classList.add("active");
       });
